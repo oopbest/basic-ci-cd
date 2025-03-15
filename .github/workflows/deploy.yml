@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write # Grant permission to push to gh-pages
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -29,3 +32,4 @@ jobs:
         with:
           branch: gh-pages
           folder: dist
+          token: ${{ secrets.GITHUB_TOKEN }}
